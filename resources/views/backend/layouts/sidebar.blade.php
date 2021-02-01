@@ -35,7 +35,14 @@
            
           </ul>
         </li>
-       
+        @php
+            $prefix = Request::route()->getPrefix();
+            $route = Request::route()->getName();
+        @endphp
+
+
+       @if (Auth::user()->usertype == "Admin")
+           
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
@@ -55,6 +62,8 @@
         
           </ul>
         </li>
+
+        @endif
         <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -166,7 +175,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('news_events.view')}}" class="nav-link">
+                <a href="{{route('news_event.view')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View News and Events</p>
                 </a>
@@ -174,6 +183,66 @@
           
             </ul>
         </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Service Management
+              <i class="fas fa-angle-left right"></i>
+            
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{route('service.view')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>View Service</p>
+              </a>
+            </li>
+        
+          </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-copy"></i>
+          <p>
+            Contact Management
+            <i class="fas fa-angle-left right"></i>
+          
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="{{route('contact.view')}}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>View Contact</p>
+            </a>
+          </li>
+      
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-copy"></i>
+          <p>
+            About Us
+            <i class="fas fa-angle-left right"></i>
+          
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="{{route('about.view')}}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>View About us</p>
+            </a>
+          </li>
+      
+        </ul>
+      </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fas fa-circle nav-icon"></i>

@@ -79,11 +79,39 @@ Route::prefix('vision')->group(function(){
 });
 
 
-Route::prefix('news_events')->group(function(){
-    Route::get('view', 'Backend\NewsEventController@view')->name('news_events.view');
-    Route::get('add', 'Backend\NewsEventController@add')->name('news_events.add');
-    Route::post('store', 'Backend\NewsEventController@store')->name('news_events.store');
-    Route::get('edit/{id}', 'Backend\NewsEventController@edit')->name('news_events.edit');
-    Route::post('update/{id}', 'Backend\NewsEventController@update')->name('news_events.update');
-    Route::get('delete/{id}', 'Backend\NewsEventController@delete')->name('news_events.delete');
+Route::prefix('news_event')->group(function(){
+    Route::get('view', 'Backend\NewsEventController@view')->name('news_event.view');
+    Route::get('add', 'Backend\NewsEventController@add')->name('news_event.add');
+    Route::post('store', 'Backend\NewsEventController@store')->name('news_event.store');
+    Route::get('edit/{id}', 'Backend\NewsEventController@edit')->name('news_event.edit');
+    Route::post('update/{id}', 'Backend\NewsEventController@update')->name('news_event.update');
+    Route::get('delete/{id}', 'Backend\NewsEventController@delete')->name('news_event.delete');
+});
+
+Route::prefix('service')->group(function(){
+    Route::get('view', 'Backend\ServiceController@view')->name('service.view');
+    Route::get('add', 'Backend\ServiceController@add')->name('service.add');
+    Route::post('store', 'Backend\ServiceController@store')->name('service.store');
+    Route::get('edit/{id}', 'Backend\ServiceController@edit')->name('service.edit');
+    Route::post('update/{id}', 'Backend\ServiceController@update')->name('service.update');
+    Route::get('delete/{id}', 'Backend\ServiceController@delete')->name('service.delete');
+});
+
+
+Route::prefix('contact')->group(function(){
+    Route::get('view', 'Backend\ContactController@view')->name('contact.view');
+    Route::get('add', 'Backend\ContactController@add')->name('contact.add');
+    Route::post('store', 'Backend\ContactController@store')->name('contact.store');
+    Route::get('edit/{id}', 'Backend\ContactController@edit')->name('contact.edit');
+    Route::post('update/{id}', 'Backend\ContactController@update')->name('contact.update');
+    Route::get('delete/{id}', 'Backend\ContactController@delete')->name('contact.delete');
+});
+
+Route::prefix('about')->group(function(){
+    Route::get('view', 'Backend\AboutController@view')->name('about.view');
+    Route::get('add', 'Backend\AboutController@add')->name('about.add');
+    Route::post('store', 'Backend\AboutController@store')->name('about.store');
+    Route::get('edit/{id}', 'Backend\AboutController@edit')->name('about.edit');
+    Route::post('update/{id}', 'Backend\AboutController@update')->name('about.update');
+    Route::get('delete/{id}', 'Backend\AboutController@delete')->name('about.delete');
 });
